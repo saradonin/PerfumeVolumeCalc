@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const entryPath = "./";
+const entryPath = "public";
 
 module.exports = {
     mode: "none",

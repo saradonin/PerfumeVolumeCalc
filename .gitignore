@@ -10,7 +10,7 @@ __generated__
 ### ReactNative.Android Stack ###
 # Gradle files
 .gradle/
-build/
+public/build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -118,7 +118,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+public/build/Release
 
 # Dependency directories
 node_modules/

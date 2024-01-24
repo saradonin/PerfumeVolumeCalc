@@ -11,8 +11,8 @@ const VolumeCalculator = () => {
     })
     const [error, setError] = useState("")
     const [style, setStyle] = useState({
-        inputStyle: {width: 125},
-        containerStyle: {width: 360}
+        inputStyle: {width: 100},
+        containerStyle: {width: 320}
     })
 
     const handleChange = (e) => {

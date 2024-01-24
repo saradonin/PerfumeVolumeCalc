@@ -31,11 +31,11 @@ const VolumeCalculator = () => {
         const resultVolume = form.initialVolume - ((form.initialWeight - form.currentWeight) / form.density).toFixed(2)
 
         if (form.currentWeight > form.initialWeight) {
-            setError("Please fill in the form correctly.")
+            setError("Current weight too high.")
             return
         }
         if (resultVolume < 0) {
-            setError("Please fill in the form correctly.")
+            setError("Current weight too low.")
             return
         }
         setForm(prevState => ({
@@ -53,6 +53,7 @@ const VolumeCalculator = () => {
             currentVolume: "",
             density: 0.84
         })
+        setError("")
     }
 
 
@@ -67,7 +68,8 @@ const VolumeCalculator = () => {
 
                     <div className="form-group row mb-2 text-danger">
                         <div className="col-auto">
-                            {error}
+                            {error && <p>{error}</p>}
+                            {error && <p>Please fill in the form correctly.</p>}
                         </div>
                     </div>
 

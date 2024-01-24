@@ -1,11 +1,11 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const entryPath = "public";
+const entryPath = "./";
 
 module.exports = {
     mode: "none",
-    entry: ["node-fetch", `./${entryPath}/js/app.js`],
+    entry: ["node-fetch", `./${entryPath}/public/js/app.js`],
     devtool: "inline-source-map",
     output: {
         filename: "out.js",

@@ -8,6 +8,7 @@ module.exports = {
     output: {
         filename: "out.js",
         path: path.resolve(__dirname, `build`),
+        publicPath: "/",
         clean: true,
     },
     devServer: {

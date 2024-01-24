@@ -1,15 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
 
-const entryPath = "./";
-
 module.exports = {
     mode: "none",
-    entry: ["node-fetch", `./${entryPath}/public/js/app.js`],
+    entry: ["node-fetch", `./public/js/app.js`],
     devtool: "inline-source-map",
     output: {
         filename: "out.js",
-        path: path.resolve(__dirname, `${entryPath}/build`),
+        path: path.resolve(__dirname, `build`),
         clean: true,
     },
     devServer: {
@@ -17,7 +15,7 @@ module.exports = {
         hot: true,
         static: [
             {
-                directory: path.join(__dirname, entryPath),
+                directory: path.join(__dirname),
                 publicPath: "/",
                 serveIndex: true,
             },

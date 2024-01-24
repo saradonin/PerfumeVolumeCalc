@@ -16,7 +16,7 @@ module.exports = {
         hot: true,
         static: [
             {
-                directory: path.join(__dirname),
+                directory: path.join(__dirname, "/"),
                 publicPath: "/",
                 serveIndex: true,
             },

@@ -10,6 +10,10 @@ const VolumeCalculator = () => {
         density: 0.84
     })
     const [error, setError] = useState("")
+    const [style, setStyle] = useState({
+        inputStyle: {width: 125},
+        containerStyle: {width: 360}
+    })
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -51,7 +55,7 @@ const VolumeCalculator = () => {
 
     return (
         <>
-            <div className="container-sm" style={{width: "320px"}}>
+            <div className="container-sm border shadow p-4 pb-0" style={style.containerStyle}>
 
                 <form>
                     <div className="form-group row mb-3 justify-content-between align-items-center">
@@ -69,8 +73,11 @@ const VolumeCalculator = () => {
                             <label className="form-label">Initial volume [ml]</label>
                         </div>
                         <div className="col-auto">
-                            <input type="number" step="0.01" className="form-control" name={"initialVolume"}
-                                   style={{width: "125px"}}
+                            <input type="number"
+                                   step="0.01"
+                                   className="form-control"
+                                   name={"initialVolume"}
+                                   style={style.inputStyle}
                                    value={form.initialVolume}
                                    onChange={handleChange}/>
                         </div>
@@ -81,8 +88,11 @@ const VolumeCalculator = () => {
                             <label>Initial weight [g]</label>
                         </div>
                         <div className="col-auto">
-                            <input type="number" step="0.01" className="form-control" name={"initialWeight"}
-                                   style={{width: "125px"}}
+                            <input type="number"
+                                   step="0.01"
+                                   className="form-control"
+                                   name={"initialWeight"}
+                                   style={style.inputStyle}
                                    value={form.initialWeight}
                                    onChange={handleChange}/>
                         </div>
@@ -93,8 +103,11 @@ const VolumeCalculator = () => {
                             <label>Current weight [g]</label>
                         </div>
                         <div className="col-auto">
-                            <input type="number" step="0.01" className="form-control" name={"currentWeight"}
-                                   style={{width: "125px"}}
+                            <input type="number"
+                                   step="0.01"
+                                   className="form-control"
+                                   name={"currentWeight"}
+                                   style={style.inputStyle}
                                    value={form.currentWeight}
                                    onChange={handleChange}/>
                         </div>
@@ -105,8 +118,12 @@ const VolumeCalculator = () => {
                             <label>Density [g/ml]</label>
                         </div>
                         <div className="col-auto">
-                            <input type="number" step="0.01" className="form-control" name={"density"}
-                                   style={{width: "125px"}} value={form.density}
+                            <input type="number"
+                                   step="0.01"
+                                   className="form-control"
+                                   name={"density"}
+                                   style={style.inputStyle}
+                                   value={form.density}
                                    onChange={handleChange}/>
                         </div>
                     </div>
@@ -116,8 +133,10 @@ const VolumeCalculator = () => {
                             <label>Current volume [ml]</label>
                         </div>
                         <div className="col-auto">
-                            <input type="text" className="form-control fw-bold" name={"currentVolume"}
-                                   style={{width: "125px"}}
+                            <input type="text"
+                                   className="form-control fw-bold"
+                                   name={"currentVolume"}
+                                   style={style.inputStyle}
                                    value={form.currentVolume} disabled readOnly/>
                         </div>
                     </div>
@@ -125,12 +144,12 @@ const VolumeCalculator = () => {
                     <div className="form-group row mb-3">
                         <div className="col-xs-2 d-flex justify-content-between align-items-center">
                             <button className="btn btn-outline-secondary mb-3"
-                                    style={{width: "125px"}}
+                                    style={style.inputStyle}
                                     onClick={handleReset}>
                                 Reset
                             </button>
                             <button className="btn btn-outline-primary mb-3"
-                                    style={{width: "125px"}}
+                                    style={style.inputStyle}
                                     onClick={handleResult}>
                                 Calculate
                             </button>

@@ -10,9 +10,12 @@ const VolumeCalculator = () => {
         density: 0.84
     })
     const [error, setError] = useState("")
-    const [style, setStyle] = useState({
-        inputStyle: {width: 100},
+    const [style, ] = useState({
+        inputStyle: {width: 120},
         containerStyle: {width: 320}
+    })
+    const [classNames, ] = useState({
+        row: "form-group row mb-3 justify-content-between align-items-center",
     })
 
     const handleChange = (e) => {
@@ -55,10 +58,10 @@ const VolumeCalculator = () => {
 
     return (
         <>
-            <div className="container-sm border shadow p-4 pb-0" style={style.containerStyle}>
+            <div className="container-sm" style={style.containerStyle}>
 
                 <form>
-                    <div className="form-group row mb-3 justify-content-between align-items-center">
+                    <div className={classNames.row}>
                         <h5 className="text-center">Perfume volume calculator</h5>
                     </div>
 
@@ -68,7 +71,7 @@ const VolumeCalculator = () => {
                         </div>
                     </div>
 
-                    <div className="form-group row mb-3 justify-content-between align-items-center">
+                    <div className={classNames.row}>
                         <div className="col-auto">
                             <label className="form-label">Initial volume [ml]</label>
                         </div>
@@ -83,7 +86,7 @@ const VolumeCalculator = () => {
                         </div>
                     </div>
 
-                    <div className="form-group row mb-3 justify-content-between align-items-center">
+                    <div className={classNames.row}>
                         <div className="col-auto">
                             <label>Initial weight [g]</label>
                         </div>
@@ -98,7 +101,7 @@ const VolumeCalculator = () => {
                         </div>
                     </div>
 
-                    <div className="form-group row mb-3 justify-content-between align-items-center">
+                    <div className={classNames.row}>
                         <div className="col-auto">
                             <label>Current weight [g]</label>
                         </div>
@@ -113,7 +116,7 @@ const VolumeCalculator = () => {
                         </div>
                     </div>
 
-                    <div className="form-group row mb-3 justify-content-between align-items-center">
+                    <div className={classNames.row}>
                         <div className="col-auto">
                             <label>Density [g/ml]</label>
                         </div>
@@ -128,7 +131,7 @@ const VolumeCalculator = () => {
                         </div>
                     </div>
 
-                    <div className="form-group row mb-3 justify-content-between align-items-center">
+                    <div className={classNames.row}>
                         <div className="col-auto">
                             <label>Current volume [ml]</label>
                         </div>
@@ -141,7 +144,7 @@ const VolumeCalculator = () => {
                         </div>
                     </div>
 
-                    <div className="form-group row mb-3">
+                    <div className={classNames.row}>
                         <div className="col-xs-2 d-flex justify-content-between align-items-center">
                             <button className="btn btn-outline-secondary mb-3"
                                     style={style.inputStyle}

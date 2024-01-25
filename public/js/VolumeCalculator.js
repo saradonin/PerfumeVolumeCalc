@@ -38,10 +38,15 @@ const VolumeCalculator = () => {
             setError("Current weight too low.")
             return
         }
+        if (!(form.initialVolume && form.initialWeight && form.currentWeight)) {
+            setError("Please fill in the form correctly.")
+            return
+        }
         setForm(prevState => ({
             ...prevState,
             currentVolume: resultVolume
         }))
+        setError("")
     }
 
     const handleReset = (e) => {
@@ -69,7 +74,6 @@ const VolumeCalculator = () => {
                     <div className="form-group row mb-2 text-danger">
                         <div className="col-auto">
                             {error && <p>{error}</p>}
-                            {error && <p>Please fill in the form correctly.</p>}
                         </div>
                     </div>
 
